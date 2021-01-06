@@ -6,7 +6,6 @@ buildscript {
 //        google()
 //        mavenCentral()
         maven{
-            url 'http://182.180.113.16:8082/nexus/content/repositories/app'
             //url 'file://E:/work/android-studio/gradle/m2repository'
         }
 
@@ -23,7 +22,7 @@ allprojects {
 //        google()
 //        mavenCentral()
         maven{
-            url 'http://182.180.113.16:8082/nexus/content/repositories/app'
+
             //url 'file://E:/work/android-studio/gradle/m2repository'
         }
 

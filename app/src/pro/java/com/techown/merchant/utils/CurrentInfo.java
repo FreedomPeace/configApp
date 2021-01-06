@@ -6,17 +6,9 @@ import com.techown.merchant.db.MyDatabaseHelper;
 public class CurrentInfo {
 
 //	请求服务器地址
-	public static String uriAPI = "https://182.180.97.38:443/ppdaPdabProxyWeb/" ;
+	public static String uriAPI = "" ;
 
-	static {
-		if (BuildConfig.isCloudApk) {
-			//云版本地址
-			uriAPI ="https://182.180.97.38:443/ppdaPdabProxyWeb/" ;
-		} else {
-			//常规本地址
-			uriAPI = "https://182.180.98.110/tjbproxy/";
-		}
-	}
+
 	//查询员工信息表所得
 	public static String userNum; //员工号
 	public static String imei; //设备imei号
