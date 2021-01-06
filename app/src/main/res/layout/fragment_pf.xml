@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/vl_px_24"
+                android:layout_height="@dimen/vl_px_36"
+                android:background="#0953AB"/>
+
+            <TextView
+                style="@style/TextStyle.Black.Size36"
+                android:layout_width="@dimen/vl_px_316"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/vl_px_50"
+                android:text="特惠业务开设"/>
+
+            <Button
+                style="@style/ButtonStyleBlue28"
+                android:id="@+id/fragment_preferntial_btn_add"
+                android:layout_width="@dimen/vl_px_140"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/vl_px_1376"
+                android:background="@drawable/select_blue_white_corner"
+                android:text="添加"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextStyle.Gray9.Size32"
+            android:id="@+id/fragment_preferntial_tv_noadd"
+            android:layout_width="@dimen/vl_px_196"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_140"
+            android:layout_marginTop="@dimen/vl_px_28"
+            android:text="未添加"/>
+
+        <LinearLayout
+            android:id="@+id/fragment_preferntial_layout_infotitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/vl_px_70"
+            android:layout_marginTop="@dimen/vl_px_26"
+            android:layout_marginLeft="@dimen/vl_px_74"
+            android:layout_marginRight="@dimen/vl_px_70"
+            android:background="#FFAED1FA"
+            android:orientation="horizontal"
+            android:visibility="gone">
+            
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="@dimen/vl_px_710"
+                android:layout_height="match_parent"
+                android:text="特惠业务类型"/>
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="@dimen/vl_px_710"
+                android:layout_height="match_parent"
+                android:text="活动名称"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_preferntial_list_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/vl_px_74"
+            android:layout_marginRight="@dimen/vl_px_70"
+            android:layout_marginBottom="@dimen/vl_px_110"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vl_px_110"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/fragment_preferntial_layout_pre"
+            android:layout_width="@dimen/vl_px_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/fragment_preferntial_btn_pre"
+                style="@style/ButtonStyleWtTvBlueBk40"
+                android:layout_width="@dimen/vl_px_340"
+                android:layout_height="@dimen/vl_px_60"
+                android:text="上一步" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/vl_px_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/fragment_preferntial_btn_save"
+                style="@style/ButtonStyleWtTvBlueBk40"
+                android:layout_width="@dimen/vl_px_340"
+                android:layout_height="@dimen/vl_px_60"
+                android:text="暂存" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/vl_px_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/fragment_preferntial_btn_next"
+                style="@style/ButtonStyleWtTvBlueBk40"
+                android:layout_width="@dimen/vl_px_340"
+                android:layout_height="@dimen/vl_px_60"
+                android:text="提交审核"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

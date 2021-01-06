@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/vl_px_80"
+    android:background="@color/white"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/busniess_setting"
+        style="@style/TextStyle.Black.Size32"
+        android:layout_width="@dimen/vl_px_130"
+        android:layout_height="@dimen/vl_px_60"
+        android:layout_marginStart="@dimen/vl_px_10"
+        android:layout_marginBottom="@dimen/vl_px_10"
+        android:layout_weight="1"
+        android:background="@color/button_gray"
+        android:gravity="center"
+        android:text="设置"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view" />
+
+    <CheckBox
+        android:id="@+id/checkBox_pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/teyue_busniess_name" />
+
+    <TextView
+        android:id="@+id/teyue_busniess_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="银联/网联"
+        android:layout_marginLeft="@dimen/vl_px_60"
+        android:textAppearance="@style/TextStyle.Black.Size32"
+        app:layout_constraintBottom_toBottomOf="@+id/busniess_setting"
+        app:layout_constraintStart_toEndOf="@+id/busniess_setting"
+        app:layout_constraintTop_toTopOf="@+id/busniess_setting" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/vl_px_1094"
+        android:layout_height="@dimen/vl_px_2"
+        android:background="@color/gray9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+</android.support.constraint.ConstraintLayout>

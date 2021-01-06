@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:orientation="horizontal">
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/pf_info_huodong_name_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder"
+				android:layout_width="@dimen/vl_px_500"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_70"
+				android:layout_alignParentRight="true"
+				/>
+			<TextView
+				android:id="@+id/pf_info_huodong_name_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_590"
+				android:layout_alignParentRight="true"
+				android:text="活动名称"/>
+
+			<TextView
+				android:id="@+id/pf_info_huodong_name_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_info_huodong_name_lab" />
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/pf_info_contractcode_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder"
+				android:layout_width="@dimen/vl_px_500"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_92"
+				android:layout_alignParentRight="true"
+				/>
+			<TextView
+				android:id="@+id/pf_info_contractcode_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_612"
+				android:layout_alignParentRight="true"
+				android:text="合同编码"/>
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20"
+		android:orientation="horizontal">
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/pf_info_startdate_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+				android:layout_width="@dimen/vl_px_500"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_70"
+				android:layout_alignParentRight="true" />
+
+			<TextView
+				android:id="@+id/pf_info_startdate_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_590"
+				android:layout_alignParentRight="true"
+				android:text="开始日期"/>
+
+			<TextView
+				android:id="@+id/pf_info_startdate_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_info_startdate_lab" />
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/pf_info_enddate_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+				android:layout_width="@dimen/vl_px_500"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_92"
+				android:layout_alignParentRight="true"
+				/>
+			<TextView
+				android:id="@+id/pf_info_enddate_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_612"
+				android:layout_alignParentRight="true"
+				android:text="结束日期"/>
+
+			<TextView
+				android:id="@+id/pf_info_enddate_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_info_enddate_lab" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20"
+		android:orientation="horizontal">
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/pf_info_fanwei_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+				android:layout_width="@dimen/vl_px_500"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_70"
+				android:layout_alignParentRight="true" />
+
+			<TextView
+				android:id="@+id/pf_info_fanwei_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_590"
+				android:layout_alignParentRight="true"
+				android:text="适用范围"/>
+
+			<TextView
+				android:id="@+id/pf_info_fanwei_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_info_fanwei_lab" />
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/pf_info_youhui_control_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+				android:layout_width="@dimen/vl_px_500"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_92"
+				android:layout_alignParentRight="true"
+				/>
+			<TextView
+				android:id="@+id/pf_info_youhui_control_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_612"
+				android:layout_alignParentRight="true"
+				android:text="优惠同享控制"/>
+
+			<TextView
+				android:id="@+id/pf_info_youhui_control_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_info_youhui_control_lab" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20"
+		android:orientation="horizontal">
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<TextView
+				android:id="@+id/pf_info_ceiling_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder"
+				android:layout_width="@dimen/vl_px_500"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_70"
+				android:layout_alignParentRight="true"
+				/>
+			<TextView
+				android:id="@+id/pf_info_ceiling_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_marginRight="@dimen/vl_px_590"
+				android:layout_alignParentRight="true"
+				android:text="单笔用卷上限"/>
+
+			<TextView
+				android:id="@+id/pf_info_ceiling_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_info_ceiling_lab" />
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

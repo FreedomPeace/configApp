@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/vl_px_1760"
+        android:layout_height="@dimen/vl_px_944"
+        android:background="#FFFFFFFF">
+
+        <Button
+            android:id="@+id/multi_select_dialog_layout_close_btn"
+            android:layout_width="@dimen/vl_px_22"
+            android:layout_height="@dimen/vl_px_44"
+            android:layout_marginTop="@dimen/vl_px_56"
+            android:layout_marginLeft="@dimen/vl_px_40"
+            android:background="@drawable/back"/>
+        
+        <TextView
+            android:id="@+id/multi_select_dialog_layout_title_name"
+            style="@style/TextStyle.Black.Size46.Center"
+            android:layout_width="@dimen/vl_px_800"
+            android:layout_height="@dimen/vl_px_66"
+            android:layout_marginTop="@dimen/vl_px_44"
+            android:layout_centerHorizontal="true"
+            android:text="选择POS刷卡适用范围"/>
+        
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/multi_select_dialog_layout_listview"
+            android:layout_width="@dimen/vl_px_1094"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vl_px_154"
+            android:layout_marginBottom="@dimen/vl_px_70"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

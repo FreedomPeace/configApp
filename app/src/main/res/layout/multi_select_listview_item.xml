@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/vl_px_80"
+    android:layout_gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/multi_select_listview_item_name"
+        style="@style/TextStyle.Gray3.Size32"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/vl_px_60"
+        android:paddingLeft="@dimen/vl_px_44"
+        android:layout_centerVertical="true"
+        android:text="门店名称"/>
+
+    <View
+        android:id="@+id/multi_select_listview_item_selectlogo"
+        android:layout_width="@dimen/vl_px_60"
+        android:layout_height="@dimen/vl_px_60"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/vl_px_10"
+        android:background="@color/shallow_blue"/><!--缺少一张图片-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vl_px_2"
+        android:background="#E6E6E6"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

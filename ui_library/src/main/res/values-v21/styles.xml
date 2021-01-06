@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="ButtonStyleWt40" parent="TextStyle.White.Size40">
+        <item name="android:gravity">center</item>
+        <item name="android:text">上一步</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">@dimen/vl_px_270</item>
+        <item name="android:layout_height">@dimen/vl_px_74</item>
+        <item name="android:background">@drawable/btn_gradient_blue_corner</item>
+        <item name="android:colorEdgeEffect" >@color/light_blue</item>
+    </style>
+
+
+    <style name="BaseViewGroup">
+        <item name="text_size">@dimen/vl_px_32</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BaseViewGroupText" parent="BaseViewGroup">
+        <item name="action_background_drawable">@drawable/action_background</item>
+        <item name="action_background_drawable_error">@drawable/action_background_error</item>
+    </style>
+
+    <style name="Half_ViewGroupEditor" parent="BaseViewGroupText">
+        <item name="action_width">@dimen/vl_px_500</item>
+        <item name="action_height">@dimen/vl_px_60</item>
+    </style>
+
+    <style name="Full_ViewGroupEditor" parent="BaseViewGroupText">
+        <item name="action_width">@dimen/vl_px_1406</item>
+        <item name="action_height">@dimen/vl_px_60</item>
+    </style>
+
+    <style name="Full_ViewGroupEditor_3" parent="Full_ViewGroupEditor">
+        <item name="action_height">@dimen/vl_px_160</item>
+    </style>
+
+    <style name="Half_ViewGroupSpinner" parent="Half_ViewGroupEditor">
+        <item name="right_icon">@mipmap/down</item>
+    </style>
+
+    <style name="Full_ViewGroupSpinner" parent="Full_ViewGroupEditor">
+        <item name="right_icon">@mipmap/down</item>
+    </style>
+
+    <style name="ViewGroupRadio" parent="BaseViewGroup">
+        <item name="action_width">@dimen/vl_px_250</item>
+        <item name="action_height">@dimen/vl_px_60</item>
+    </style>
+</resources>

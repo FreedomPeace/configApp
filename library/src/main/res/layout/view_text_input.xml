@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/vl_px_16"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+
+        android:background="@color/white"
+        android:id="@+id/ll_tag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="@dimen/vl_px_200"
+        android:layout_height="@dimen/vl_px_60"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextStyle.RedStar.Size36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/input_star"
+            android:hint="0"
+            android:text="*" />
+
+        <TextView
+            android:id="@+id/input_label"
+            style="@style/TextStyle.Black.Size36"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="注册城市" />
+    </LinearLayout>
+    <TextView
+        app:layout_constraintLeft_toRightOf="@id/ll_tag"
+        app:layout_constraintTop_toTopOf="@+id/ll_tag"
+        android:id="@+id/input_value"
+        style="@style/TextStyle.Gray3.Size32.BoxBorder"
+        android:layout_width="@dimen/vl_px_280"
+        android:layout_height="@dimen/vl_px_60"
+        android:layout_marginLeft="@dimen/vl_px_22" />
+</android.support.constraint.ConstraintLayout>

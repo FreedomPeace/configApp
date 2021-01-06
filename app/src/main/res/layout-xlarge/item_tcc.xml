@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.techown.merchant.R"/>
+            <variable
+                name="viewmodel"
+                type="com.pccc.shoudan.business.teyue.logic.detail.itemviewmodel.TccViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <Switch
+            android:checked="@{viewmodel.isItemViewOpen}"
+            app:switch="@{viewmodel.isItemViewOpen}"
+            android:id="@+id/field_input_enable"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginLeft="@dimen/vl_px_40"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            app:layout_constraintBottom_toTopOf="@+id/dcc_count_fee_method"
+            app:layout_constraintStart_toStartOf="@+id/dcc_count_fee_method" />
+
+        <Switch
+            android:checked="@{viewmodel.supportFido}"
+            app:switch="@{viewmodel.supportFido}"
+            android:id="@+id/support_fido"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginLeft="@dimen/vl_px_60"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/tv_label_item8"
+            app:layout_constraintStart_toEndOf="@+id/tv_label_item8"
+            app:layout_constraintTop_toTopOf="@+id/tv_label_item8" />
+
+        <TextView
+            android:text="@{viewmodel.dcc_handleFreeLimit}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.dcc_handleFreeLimit)}"
+            android:id="@+id/dcc_handling_fee_limit"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/dcc_fee_rate"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/dcc_fee_rate"
+            app:layout_constraintTop_toBottomOf="@+id/dcc_fee_rate" />
+
+        <TextView
+            android:id="@+id/tv_label_item1"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_20"
+            android:gravity="center"
+            android:text="DCC计费方式"
+            app:layout_constraintBottom_toBottomOf="@+id/dcc_count_fee_method"
+            app:layout_constraintEnd_toStartOf="@+id/dcc_count_fee_method"
+            app:layout_constraintTop_toTopOf="@+id/dcc_count_fee_method"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_label_item2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="DCC费率%"
+            app:layout_constraintBottom_toBottomOf="@+id/dcc_fee_rate"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item1"
+            app:layout_constraintTop_toTopOf="@+id/dcc_fee_rate" />
+
+        <TextView
+            android:id="@+id/tv_label_item3"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="DCC手续费上限"
+            app:layout_constraintBottom_toBottomOf="@+id/dcc_handling_fee_limit"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item2"
+            app:layout_constraintTop_toTopOf="@+id/dcc_handling_fee_limit" />
+
+        <TextView
+            android:id="@+id/tv_label_item4"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="DCC单笔交易限额"
+            app:layout_constraintBottom_toBottomOf="@+id/single_transaction_limit"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item3"
+            app:layout_constraintTop_toTopOf="@+id/single_transaction_limit" />
+
+        <TextView
+            android:id="@+id/tv_label_item"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="合作组织英文缩写"
+            app:layout_constraintBottom_toBottomOf="@+id/partner_organization_english"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item6"
+            app:layout_constraintTop_toTopOf="@+id/partner_organization_english" />
+
+        <TextView
+            android:id="@+id/tv_label_item6"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="合作组织名称"
+            app:layout_constraintBottom_toBottomOf="@+id/partner_organization_name"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item4"
+            app:layout_constraintTop_toTopOf="@+id/partner_organization_name" />
+
+        <TextView
+            android:id="@+id/tv_label_item7"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="合作组织ID"
+            app:layout_constraintBottom_toBottomOf="@+id/partner_organization_id"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item"
+            app:layout_constraintTop_toTopOf="@+id/partner_organization_id" />
+
+        <TextView
+            android:id="@+id/tv_label_item8"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vl_px_54"
+            android:gravity="center"
+            android:text="支持Fidelio"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item7"
+            app:layout_constraintTop_toBottomOf="@+id/tv_label_item7" />
+
+        <TextView
+            android:id="@+id/tv_label_item5"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="DCC每笔固定金额"
+            app:layout_constraintBottom_toBottomOf="@+id/fixed_amount_per_transaction"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item4"
+            app:layout_constraintTop_toTopOf="@+id/fixed_amount_per_transaction" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="开通DCC业务"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item1"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TCC码"
+            app:layout_constraintBottom_toBottomOf="@+id/tcc_code"
+            app:layout_constraintEnd_toEndOf="@+id/tv_big_label_name"
+            app:layout_constraintTop_toTopOf="@+id/tcc_code" />
+
+        <TextView
+            android:text="@{viewmodel.dcc_countFeeMethod}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.dcc_countFeeMethod)}"
+            android:id="@+id/dcc_count_fee_method"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_450"
+            android:layout_marginTop="@dimen/vl_px_240"
+            android:hint=""
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:text="@{viewmodel.dcc_feeRate}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.dcc_feeRate)}"
+            android:id="@+id/dcc_fee_rate"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/dcc_count_fee_method"
+            app:layout_constraintStart_toStartOf="@+id/dcc_count_fee_method"
+            app:layout_constraintTop_toBottomOf="@+id/dcc_count_fee_method" />
+
+        <TextView
+            android:text="@{viewmodel.dcc_singleTransactionLimit}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.dcc_singleTransactionLimit)}"
+            android:id="@+id/single_transaction_limit"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintStart_toStartOf="@+id/dcc_handling_fee_limit"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_amount_per_transaction" />
+
+        <TextView
+            android:text="@{viewmodel.tccCode}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.tccCode)}"
+            android:id="@+id/tcc_code"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:hint=""
+            android:layout_marginBottom="@dimen/vl_px_44"
+            app:layout_constraintBottom_toTopOf="@+id/field_input_enable"
+            app:layout_constraintEnd_toEndOf="@+id/dcc_count_fee_method"
+            app:layout_constraintStart_toStartOf="@+id/dcc_count_fee_method" />
+
+        <TextView
+            android:text="@{viewmodel.organizationName}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.organizationName)}"
+            android:id="@+id/partner_organization_name"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/single_transaction_limit"
+            app:layout_constraintStart_toStartOf="@+id/single_transaction_limit"
+            app:layout_constraintTop_toBottomOf="@+id/single_transaction_limit" />
+
+        <TextView
+            android:text="@{viewmodel.organizationEnglish}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.organizationEnglish)}"
+            android:id="@+id/partner_organization_english"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/partner_organization_name"
+            app:layout_constraintStart_toStartOf="@+id/partner_organization_name"
+            app:layout_constraintTop_toBottomOf="@+id/partner_organization_name" />
+
+        <TextView
+            android:text="@{viewmodel.organizationId}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.organizationId)}"
+            android:id="@+id/partner_organization_id"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/partner_organization_english"
+            app:layout_constraintStart_toStartOf="@+id/partner_organization_english"
+            app:layout_constraintTop_toBottomOf="@+id/partner_organization_english" />
+
+        <TextView
+            android:text="@{viewmodel.dcc_fixedAmountPerTransaction}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.dcc_fixedAmountPerTransaction)}"
+            android:id="@+id/fixed_amount_per_transaction"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/single_transaction_limit"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/single_transaction_limit"
+            app:layout_constraintTop_toBottomOf="@+id/dcc_handling_fee_limit" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

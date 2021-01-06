@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_merchant_change">商户信息修改</string>
+    <string name="str_teyue_manage">特约管理</string>
+    <string name="str_tehui_manage">特惠管理</string>
+    <string name="str_status_change">状态调整</string>
+    <string name="str_merchant__detail">商户详情</string>
+</resources>

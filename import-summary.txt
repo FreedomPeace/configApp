@@ -1,0 +1,149 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gradle\
+* .gradle\3.3\
+* .gradle\3.3\taskArtifacts\
+* .gradle\3.3\taskArtifacts\fileHashes.bin
+* .gradle\3.3\taskArtifacts\fileSnapshots.bin
+* .gradle\3.3\taskArtifacts\taskArtifacts.bin
+* .gradle\3.3\taskArtifacts\taskArtifacts.lock
+* .gradle\3.3\tasks\
+* .gradle\3.3\tasks\_compileDebugJavaWithJavac\
+* .gradle\3.3\tasks\_compileDebugJavaWithJavac\localClassSetAnalysis\
+* .gradle\3.3\tasks\_compileDebugJavaWithJavac\localClassSetAnalysis\localClassSetAnalysis.bin
+* .gradle\3.3\tasks\_compileDebugJavaWithJavac\localClassSetAnalysis\localClassSetAnalysis.lock
+* .gradle\3.3\tasks\_compileDebugJavaWithJavac\localJarClasspathSnapshot\
+* .gradle\3.3\tasks\_compileDebugJavaWithJavac\localJarClasspathSnapshot\localJarClasspathSnapshot.bin
+* .gradle\3.3\tasks\_compileDebugJavaWithJavac\localJarClasspathSnapshot\localJarClasspathSnapshot.lock
+* .gradle\4.4\
+* .gradle\4.4\fileChanges\
+* .gradle\4.4\fileChanges\last-build.bin
+* .gradle\4.4\fileContent\
+* .gradle\4.4\fileContent\annotation-processors.bin
+* .gradle\4.4\fileContent\fileContent.lock
+* .gradle\4.4\fileHashes\
+* .gradle\4.4\fileHashes\fileHashes.bin
+* .gradle\4.4\fileHashes\fileHashes.lock
+* .gradle\4.4\fileHashes\resourceHashesCache.bin
+* .gradle\4.4\javaCompile\
+* .gradle\4.4\javaCompile\classAnalysis.bin
+* .gradle\4.4\javaCompile\jarAnalysis.bin
+* .gradle\4.4\javaCompile\javaCompile.lock
+* .gradle\4.4\javaCompile\taskHistory.bin
+* .gradle\4.4\javaCompile\taskJars.bin
+* .gradle\4.4\taskHistory\
+* .gradle\4.4\taskHistory\taskHistory.bin
+* .gradle\4.4\taskHistory\taskHistory.lock
+* .gradle\4.6\
+* .gradle\4.6\fileChanges\
+* .gradle\4.6\fileChanges\last-build.bin
+* .gradle\4.6\fileContent\
+* .gradle\4.6\fileContent\annotation-processors.bin
+* .gradle\4.6\fileContent\fileContent.lock
+* .gradle\4.6\fileHashes\
+* .gradle\4.6\fileHashes\fileHashes.bin
+* .gradle\4.6\fileHashes\fileHashes.lock
+* .gradle\4.6\fileHashes\resourceHashesCache.bin
+* .gradle\4.6\javaCompile\
+* .gradle\4.6\javaCompile\classAnalysis.bin
+* .gradle\4.6\javaCompile\jarAnalysis.bin
+* .gradle\4.6\javaCompile\javaCompile.lock
+* .gradle\4.6\javaCompile\taskHistory.bin
+* .gradle\4.6\javaCompile\taskJars.bin
+* .gradle\4.6\taskHistory\
+* .gradle\4.6\taskHistory\taskHistory.bin
+* .gradle\4.6\taskHistory\taskHistory.lock
+* .gradle\buildOutputCleanup\
+* .gradle\buildOutputCleanup\buildOutputCleanup.lock
+* .gradle\buildOutputCleanup\cache.properties
+* .gradle\buildOutputCleanup\outputFiles.bin
+* .gradle\vcsWorkingDirs\
+* .gradle\vcsWorkingDirs\gc.properties
+* .idea\
+* .idea\caches\
+* .idea\caches\build_file_checksums.ser
+* .idea\encodings.xml
+* .idea\gradle.xml
+* .idea\misc.xml
+* .idea\modules.xml
+* .idea\runConfigurations.xml
+* .idea\vcs.xml
+* .idea\workspace.xml
+* NewMerchant.iml
+* gradlew
+* gradlew.bat
+* packagedConfig.gradle
+* proguard.cfg
+* techown.keystore
+* test
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+gson-2.8.0.jar => com.google.code.gson:gson:2.8.0
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.8.0.jar => version 2.8.0 in com.google.code.gson:gson:2.8.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets
+* libs\armeabi-v7a\libbcrecog.so => app\src\main\jniLibs\armeabi-v7a\libbcrecog.so
+* libs\armeabi-v7a\libdewlt2-jni.so => app\src\main\jniLibs\armeabi-v7a\libdewlt2-jni.so
+* libs\armeabi-v7a\libreader-jni.so => app\src\main\jniLibs\armeabi-v7a\libreader-jni.so
+* libs\armeabi-v7a\libserial_port.so => app\src\main\jniLibs\armeabi-v7a\libserial_port.so
+* libs\armeabi-v7a\libserial_porter.so => app\src\main\jniLibs\armeabi-v7a\libserial_porter.so
+* libs\armeabi-v7a\libwltdecode.so => app\src\main\jniLibs\armeabi-v7a\libwltdecode.so
+* libs\bcsdk.jar => app\libs\bcsdk.jar
+* libs\device1.2.jar => app\libs\device1.2.jar
+* libs\fastjson-1.2.12.jar => app\libs\fastjson-1.2.12.jar
+* libs\glide-3.7.0.jar => app\libs\glide-3.7.0.jar
+* libs\HS_CVR100U.jar => app\libs\HS_CVR100U.jar
+* libs\sdtapi.jar => app\libs\sdtapi.jar
+* libs\SystemProperties.jar => app\libs\SystemProperties.jar
+* lint.xml => app\lint.xml
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

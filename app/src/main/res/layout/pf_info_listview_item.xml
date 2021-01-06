@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/vl_px_90"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/shape_list_bg"
+    android:orientation="horizontal" >
+    
+    <TextView
+        style="@style/TextStyle.Gray3.Size32.Center"
+        android:id="@+id/info_list_item_tv_type"
+        android:layout_width="@dimen/vl_px_710"
+        android:layout_height="match_parent"/>
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="#E6E6E6"/>
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size32.Center"
+        android:id="@+id/info_list_item_tv_name"
+        android:layout_width="@dimen/vl_px_710"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="#E6E6E6"/>
+    
+    <Button
+        style="@style/ButtonStyleBlackTv32"
+        android:id="@+id/info_list_item_btn_delete"
+        android:layout_width="@dimen/vl_px_130"
+        android:layout_height="@dimen/vl_px_60"
+        android:layout_marginLeft="@dimen/vl_px_54"
+        android:text="删除"/><!--缺少背景 -->
+
+</LinearLayout>

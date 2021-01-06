@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.techown.merchant.R" />
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.information_change.InformationChangeViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_"
+        tools:ignore="MissingDefaultResource">
+
+        <TextView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/textView5"
+            style="@style/TextStyle.Black.Size46"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/vl_px_70"
+            android:gravity="center"
+            android:text="信息变更"
+            android:textSize="@dimen/vl_px_36" />
+
+        <TextView
+            android:id="@+id/textView9"
+            style="@style/TextStyle.Black.Size36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/vl_px_20"
+            android:text="商户识别号"
+            app:layout_constraintBottom_toBottomOf="@+id/merchant_identifier"
+            app:layout_constraintEnd_toStartOf="@+id/merchant_identifier"
+            app:layout_constraintTop_toTopOf="@+id/merchant_identifier" />
+
+        <TextView
+            android:id="@+id/textView7"
+            style="@style/TextStyle.Black.Size36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开立日期"
+            app:layout_constraintBottom_toBottomOf="@+id/merchant_create_date"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toTopOf="@+id/merchant_create_date" />
+
+        <TextView
+            android:id="@+id/textView8"
+            style="@style/TextStyle.Black.Size36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="业务类型"
+            app:layout_constraintBottom_toBottomOf="@+id/merchant_business_type"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/merchant_business_type" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/TextStyle.Black.Size36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/vl_px_20"
+            android:text="商户名称"
+            app:layout_constraintBottom_toBottomOf="@+id/merchant_name"
+            app:layout_constraintEnd_toStartOf="@+id/merchant_name"
+            app:layout_constraintTop_toTopOf="@+id/merchant_name" />
+
+        <TextView
+            android:id="@+id/merchant_name"
+            android:text="@{viewmodel.merchantName}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.merchantName)}"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_500"
+            android:layout_height="@dimen/vl_px_70"
+            android:layout_marginRight="@dimen/vl_px_438"
+            app:layout_constraintEnd_toStartOf="@+id/merchant_identifier"
+            app:layout_constraintTop_toTopOf="@+id/merchant_identifier" />
+
+        <TextView
+            android:id="@+id/merchant_identifier"
+            android:text="@{viewmodel.merchantIdentifier}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.merchantIdentifier)}"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_500"
+            android:layout_height="@dimen/vl_px_70"
+            android:layout_marginTop="@dimen/vl_px_70"
+            app:layout_constraintRight_toRightOf="@+id/merchant_list"
+            android:layout_marginRight="@dimen/vl_px_92"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:text="@{viewmodel.createDate}"
+            android:id="@+id/merchant_create_date"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_420"
+            android:layout_height="@dimen/vl_px_70"
+            android:layout_marginTop="@dimen/vl_px_22"
+            app:layout_constraintStart_toStartOf="@+id/merchant_identifier"
+            app:layout_constraintTop_toBottomOf="@+id/merchant_identifier" />
+
+        <TextView
+            android:onClick="@{()-> viewmodel.setDatePicker(viewmodel.createDate)}"
+            android:id="@+id/tv_label_item10"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="@dimen/vl_px_52"
+            android:layout_height="@dimen/vl_px_44"
+            android:background="@drawable/calendar"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/merchant_create_date"
+            app:layout_constraintEnd_toEndOf="@+id/merchant_identifier"
+            app:layout_constraintTop_toTopOf="@+id/merchant_create_date" />
+
+        <TextView
+            android:id="@+id/merchant_business_type"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:text="@{viewmodel.businessType}"
+            android:onClick="@{()-> viewmodel.setEditDialog(viewmodel.businessType)}"
+            android:layout_width="@dimen/vl_px_500"
+            android:layout_height="@dimen/vl_px_70"
+            app:layout_constraintBottom_toBottomOf="@+id/merchant_create_date"
+            app:layout_constraintEnd_toEndOf="@+id/merchant_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/merchant_name"
+            app:layout_constraintTop_toTopOf="@+id/merchant_create_date" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="@dimen/vl_px_1772"
+            android:layout_height="@dimen/vl_px_70"
+            android:layout_marginTop="@dimen/vl_px_148"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/merchant_search">
+
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center.BGBlue"
+                android:layout_width="@dimen/vl_px_306"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="商户经营名称" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/color_list_title" />
+
+
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center.BGBlue"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="商户识别号" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/color_list_title" />
+
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center.BGBlue"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="业务类型" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/color_list_title" />
+
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center.BGBlue"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="业务状态" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/color_list_title" />
+
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center.BGBlue"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="开立日期" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/color_list_title" />
+
+            <TextView
+                style="@style/TextStyle.Gray3.Size30.Center.BGBlue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="商户状态" />
+
+        </LinearLayout>
+
+        <Button
+            style="@style/ButtonStyleWt40"
+            android:layout_width="@dimen/vl_px_340"
+            android:layout_height="@dimen/vl_px_60"
+            android:id="@+id/merchant_search"
+            android:gravity="center"
+            android:onClick="@{()-> viewmodel.searchChangeList()}"
+            app:layout_constraintTop_toBottomOf="@+id/merchant_business_type"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/vl_px_120"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="查询" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/merchant_list"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/vl_px_640"
+            android:background="@color/white"
+            app:items="@{viewmodel.merchantInformations}"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.techown.merchant.R"/>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.teyue.logic.detail.itemviewmodel.DebitCommonViewModel" />
+
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <Switch
+            android:checked="@{viewmodel.isItemViewOpen}"
+            app:switch="@{viewmodel.isItemViewOpen}"
+            android:id="@+id/field_input_enable"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_36"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/tv_big_label_name"
+            app:layout_constraintStart_toEndOf="@+id/tv_big_label_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_big_label_name" />
+
+        <TextView
+
+            android:id="@+id/handling_fee_limit"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.handleFreeLimit)}"
+            android:text="@{viewmodel.handleFreeLimit}"
+            app:layout_constraintEnd_toEndOf="@+id/fee_rate"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/fee_rate"
+            app:layout_constraintTop_toBottomOf="@+id/fee_rate" />
+
+        <TextView
+            android:id="@+id/tv_label_item1"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_20"
+            android:gravity="center"
+            android:text="计费方式"
+            app:layout_constraintBottom_toBottomOf="@+id/count_fee_method"
+            app:layout_constraintEnd_toStartOf="@+id/count_fee_method"
+            app:layout_constraintTop_toTopOf="@+id/count_fee_method"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_label_item2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="费率%"
+            app:layout_constraintBottom_toBottomOf="@+id/fee_rate"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item1"
+            app:layout_constraintTop_toTopOf="@+id/fee_rate" />
+
+        <TextView
+            android:id="@+id/tv_label_item3"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="手续费上限"
+            app:layout_constraintBottom_toBottomOf="@+id/handling_fee_limit"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item2"
+            app:layout_constraintTop_toTopOf="@+id/handling_fee_limit" />
+
+        <TextView
+            android:id="@+id/tv_label_item4"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="每笔固定金额"
+            app:layout_constraintBottom_toBottomOf="@+id/fixed_amount_per_transaction"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item3"
+            app:layout_constraintTop_toTopOf="@+id/fixed_amount_per_transaction" />
+
+        <TextView
+            android:id="@+id/tv_label_item5"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="单笔交易限额"
+            app:layout_constraintBottom_toBottomOf="@+id/single_transaction_limit"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item4"
+            app:layout_constraintTop_toTopOf="@+id/single_transaction_limit" />
+
+        <TextView
+            android:id="@+id/tag"
+            android:layout_width="@dimen/vl_px_24"
+            android:layout_height="@dimen/vl_px_36"
+            android:background="@color/dark_blue"
+            app:layout_constraintBottom_toBottomOf="@id/tv_big_label_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_big_label_name" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name"
+            style="@style/TextStyle.Black.Size36"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/vl_px_70"
+            android:layout_marginLeft="@dimen/vl_px_50"
+            android:layout_marginTop="@dimen/vl_px_18"
+            android:gravity="center"
+            tools:text="他行借记卡"
+            android:text="@{viewmodel.itemTagName}"
+            app:layout_constraintLeft_toRightOf="@id/tag"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:id="@+id/count_fee_method"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_450"
+            android:layout_marginTop="@dimen/vl_px_40"
+            android:layout_marginRight="@dimen/vl_px_914"
+            android:hint=""
+            android:onClick="@{()->viewmodel.setListDialog(viewmodel.countFeeMethod,R.string.count_fee_method)}"
+            android:text="@{viewmodel.countFeeMethod}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_input_enable" />
+
+        <TextView
+
+            android:id="@+id/fee_rate"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.feeRate)}"
+            android:text="@{viewmodel.feeRate}"
+            app:layout_constraintEnd_toEndOf="@+id/count_fee_method"
+            app:layout_constraintStart_toStartOf="@+id/count_fee_method"
+            app:layout_constraintTop_toBottomOf="@+id/count_fee_method" />
+
+        <TextView
+
+            android:id="@+id/fixed_amount_per_transaction"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.fixedAmountPerTransaction)}"
+            android:text="@{viewmodel.fixedAmountPerTransaction}"
+            app:layout_constraintEnd_toEndOf="@+id/handling_fee_limit"
+            app:layout_constraintStart_toStartOf="@+id/handling_fee_limit"
+            app:layout_constraintTop_toBottomOf="@+id/handling_fee_limit" />
+
+        <TextView
+
+            android:id="@+id/single_transaction_limit"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.singleTransactionLimit)}"
+            android:text="@{viewmodel.singleTransactionLimit}"
+            app:layout_constraintEnd_toEndOf="@+id/fixed_amount_per_transaction"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/fixed_amount_per_transaction"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_amount_per_transaction" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/vl_px_2"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:background="@color/separate_line"
+            app:layout_constraintTop_toBottomOf="@+id/single_transaction_limit" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

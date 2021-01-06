@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/merchant_info_change"
+        android:title="@string/str_merchant_change"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/teyue_manage"
+        android:title="@string/str_teyue_manage"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/tehui_manage"
+        android:title="@string/str_tehui_manage"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/status_change"
+        android:title="@string/str_status_change"
+        app:showAsAction="never"></item>
+    <item
+        android:id="@+id/merchant__detail"
+        android:title="@string/str_merchant__detail"
+        app:showAsAction="never"></item>
+
+</menu>

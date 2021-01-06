@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/vl_px_1760"
+        android:layout_height="@dimen/vl_px_1108"
+        android:background="#FFFFFFFF">
+
+        <Button
+            android:id="@+id/seek_multi_select_dialog_layout_close_btn"
+            android:layout_width="@dimen/vl_px_22"
+            android:layout_height="@dimen/vl_px_44"
+            android:layout_marginTop="@dimen/vl_px_56"
+            android:layout_marginLeft="@dimen/vl_px_40"
+            android:background="@drawable/back"/>
+        
+        <TextView
+            android:id="@+id/seek_multi_select_dialog_layout_title_name"
+            style="@style/TextStyle.Black.Size46.Center"
+            android:layout_width="@dimen/vl_px_464"
+            android:layout_height="@dimen/vl_px_66"
+            android:layout_marginTop="@dimen/vl_px_44"
+            android:layout_centerHorizontal="true"
+            android:text="添加门店"/>
+
+        <TextView
+            android:id="@+id/seek_multi_select_dialog_layout_search_tv"
+            style="@style/TextStyle.Black.Size32.Seek"
+            android:layout_width="@dimen/vl_px_1040"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/vl_px_158"
+            android:hint="门店名称"/>
+        
+        <RelativeLayout
+            android:layout_width="@dimen/vl_px_1094"
+            android:layout_height="@dimen/vl_px_104"
+            android:layout_marginTop="@dimen/vl_px_218"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                style="@style/TextStyle.Black.Size32"
+                android:layout_width="@dimen/vl_px_64"
+                android:layout_height="@dimen/vl_px_46"
+                android:layout_marginRight="@dimen/vl_px_88"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="全选"/>
+            
+            <CheckBox
+                android:id="@+id/seek_multi_select_dialog_layout_checkbox"
+                android:layout_width="@dimen/vl_px_60"
+                android:layout_height="@dimen/vl_px_40"
+                android:layout_marginRight="@dimen/vl_px_28"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"/><!--缺少图片-->
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="@dimen/vl_px_1094"
+            android:layout_height="@dimen/vl_px_2"
+            android:layout_marginTop="@dimen/vl_px_322"
+            android:layout_centerHorizontal="true"
+            android:background="#E7E7E8"/>
+        
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/seek_multi_select_dialog_layout_listview"
+            android:layout_width="@dimen/vl_px_1094"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vl_px_322"
+            android:layout_marginBottom="@dimen/vl_px_70"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</LinearLayout>

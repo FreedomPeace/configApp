@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/vl_px_1760"
+        android:layout_height="@dimen/vl_px_1108"
+        android:background="#FFFFFFFF">
+
+    <Button
+        android:id="@+id/item_btn_close"
+        android:layout_width="@dimen/vl_px_32"
+        android:layout_height="@dimen/vl_px_32"
+        android:layout_marginTop="@dimen/vl_px_78"
+        android:layout_marginLeft="@dimen/vl_px_40"
+        android:background="#FF000000"/><!-- TODO 少一张删除图片-->
+
+    <TextView
+        style="@style/TextStyle.Black.Size46.Center"
+        android:layout_width="@dimen/vl_px_376"
+        android:layout_height="@dimen/vl_px_66"
+        android:layout_marginTop="@dimen/vl_px_60"
+        android:layout_centerHorizontal="true"
+        android:text="新增特惠业务"/>
+
+    <LinearLayout
+        android:id="@+id/item_layout"
+        android:layout_width="@dimen/vl_px_1094"
+        android:layout_height="@dimen/vl_px_60"
+        android:layout_marginTop= "@dimen/vl_px_272"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="@dimen/vl_px_228"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/vl_px_30"
+            android:text="优惠买单"/>
+
+        <ImageView
+            android:layout_width="@dimen/vl_px_60"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_746"
+            android:background="#FF000000"/><!-- TODO 少一张删除图片-->
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="@dimen/vl_px_1094"
+        android:layout_height="@dimen/vl_px_2"
+        android:layout_marginTop="@dimen/vl_px_332"
+        android:layout_centerHorizontal="true"
+        android:background="#FFE7E7E8"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

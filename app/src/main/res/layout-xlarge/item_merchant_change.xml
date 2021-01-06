@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.information_change.ItemInformationViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="@dimen/vl_px_1772"
+            android:layout_height="@dimen/vl_px_70"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/merchant_name"
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="@dimen/vl_px_306"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{viewmodel.merchantInformationObservableField.merchantName}"
+                tools:text="商户经营名称" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"/>
+
+
+            <TextView
+                android:id="@+id/merchant_identifier"
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{viewmodel.merchantInformationObservableField.merchantIdentifier}"
+                tools:text="商户识别号" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/separate_line" />
+
+            <TextView
+                android:id="@+id/business_type"
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{viewmodel.merchantInformationObservableField.businessType}"
+                tools:text="业务类型" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/separate_line" />
+
+            <TextView
+                android:id="@+id/business_status"
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{viewmodel.merchantInformationObservableField.businessStatus}"
+                tools:text="业务状态" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/separate_line" />
+
+            <TextView
+                android:id="@+id/create_date"
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="@dimen/vl_px_288"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@{viewmodel.merchantInformationObservableField.createDate}"
+                tools:text="开立日期" />
+
+            <View
+                android:layout_width="@dimen/vl_px_2"
+                android:layout_height="match_parent"
+                android:background="@color/separate_line" />
+
+            <TextView
+                android:id="@+id/merchant_status"
+                style="@style/TextStyle.Gray3.Size30.Center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="@{viewmodel.merchantInformationObservableField.merchantStatus}"
+                tools:text="商户状态" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

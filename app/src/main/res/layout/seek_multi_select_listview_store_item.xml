@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/vl_px_2"
+        android:paddingTop="@dimen/vl_px_20"
+        android:paddingBottom="@dimen/vl_px_20"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/seek_multi_select_listview_item_name"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/seek_multi_select_listview_item_adrs"
+            style="@style/TextStyle.Gray9.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vl_px_10"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/seek_multi_select_listview_item_checkbox"
+        android:layout_width="@dimen/vl_px_60"
+        android:layout_height="@dimen/vl_px_40"
+        android:layout_marginRight="@dimen/vl_px_28"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vl_px_2"
+        android:background="#E6E6E6"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

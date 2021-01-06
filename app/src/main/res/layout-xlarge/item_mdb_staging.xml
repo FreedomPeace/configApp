@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <Switch
+            android:checked="@{viewmodel.isItemViewOpen}"
+            app:switch="@{viewmodel.isItemViewOpen}"
+            android:id="@+id/field_input_enable"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginLeft="@dimen/vl_px_40"
+            android:layout_marginBottom="@dimen/vl_px_38"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/staging_start_amount"
+            app:layout_constraintStart_toStartOf="@+id/staging_start_amount" />
+
+        <TextView
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.stagingCount)}"
+            android:text="@{viewmodel.stagingCount}"
+            android:id="@+id/staging_count"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/card_product_num"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/card_product_num"
+            app:layout_constraintTop_toBottomOf="@+id/card_product_num" />
+
+        <TextView
+            android:id="@+id/tv_label_item1"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_20"
+            android:gravity="center"
+            android:text="分期起始金额"
+            app:layout_constraintBottom_toBottomOf="@+id/staging_start_amount"
+            app:layout_constraintEnd_toStartOf="@+id/staging_start_amount"
+            app:layout_constraintTop_toTopOf="@+id/staging_start_amount"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_label_item2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="卡产品组编号"
+            app:layout_constraintBottom_toBottomOf="@+id/card_product_num"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item1"
+            app:layout_constraintTop_toTopOf="@+id/card_product_num" />
+
+        <TextView
+            android:id="@+id/tv_label_item3"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="分期期数"
+            app:layout_constraintBottom_toBottomOf="@+id/staging_count"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item2"
+            app:layout_constraintTop_toTopOf="@+id/staging_count" />
+
+        <TextView
+            android:id="@+id/tv_label_item4"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="费率内容"
+            app:layout_constraintBottom_toBottomOf="@+id/rate_content"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item3"
+            app:layout_constraintTop_toTopOf="@+id/rate_content" />
+
+        <TextView
+            android:id="@+id/tv_label_item9"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="贴息费率"
+            app:layout_constraintBottom_toBottomOf="@+id/tiexi_rate"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item4"
+            app:layout_constraintTop_toTopOf="@+id/tiexi_rate" />
+
+        <TextView
+            android:id="@+id/tv_label_item5"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="费率类型"
+            app:layout_constraintBottom_toBottomOf="@+id/rate_style"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item4"
+            app:layout_constraintTop_toTopOf="@+id/rate_style" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="本行贷记卡分期"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item1"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable" />
+
+        <TextView
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.stagingStartAmount)}"
+            android:text="@{viewmodel.stagingStartAmount}"
+            android:id="@+id/staging_start_amount"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_450"
+            android:layout_marginTop="@dimen/vl_px_120"
+            android:hint=""
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.cardProductNum)}"
+            android:text="@{viewmodel.cardProductNum}"
+            android:id="@+id/card_product_num"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/staging_start_amount"
+            app:layout_constraintStart_toStartOf="@+id/staging_start_amount"
+            app:layout_constraintTop_toBottomOf="@+id/staging_start_amount" />
+
+        <TextView
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.rateContent)}"
+            android:text="@{viewmodel.rateContent}"
+            android:id="@+id/rate_content"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            android:hint=""
+            app:layout_constraintStart_toStartOf="@+id/staging_count"
+            app:layout_constraintTop_toBottomOf="@+id/rate_style" />
+
+
+        <TextView
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.tiexiRate)}"
+            android:text="@{viewmodel.tiexiRate}"
+            android:id="@+id/tiexi_rate"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            android:hint=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/rate_content"
+            app:layout_constraintStart_toStartOf="@+id/rate_content"
+            app:layout_constraintTop_toBottomOf="@+id/rate_content" />
+
+        <TextView
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.rateStyle)}"
+            android:text="@{viewmodel.rateStyle}"
+            android:id="@+id/rate_style"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_22"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/rate_content"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/rate_content"
+            app:layout_constraintTop_toBottomOf="@+id/staging_count" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <data>
+        <import type="com.techown.merchant.R"/>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.teyue.logic.detail.itemviewmodel.MDBStagingViewModel" />
+    </data>
+</layout>

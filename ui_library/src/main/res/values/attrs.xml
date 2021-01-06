@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="show_mark" format="boolean|reference">false</attr>
+    <attr name="tag" format="string|reference" />
+    <attr name="tag_style" format="reference" />
+    <attr name="tag_width" format="dimension" />
+    <attr name="tag_height" format="dimension" />
+    <attr name="mark_color" format="color|reference" />
+    <attr name="mark_ok_color" format="color|reference" />
+    <attr name="text_size" format="dimension|reference" />
+    <attr name="action_background" format="color" />
+    <attr name="action_background_error" format="color" />
+    <attr name="action_background_drawable" format="reference" />
+    <attr name="action_background_drawable_error" format="reference" />
+    <attr name="action_width" format="dimension|reference" />
+    <attr name="action_height" format="dimension|reference" />
+    <attr name="action_text_size" format="dimension|reference" />
+    <attr name="margin_end" format="dimension" />
+    <attr name="right_icon" format="reference" />
+
+    <attr name="hint" format="string" />
+    <attr name="hint1" format="string" />
+    <attr name="hint2" format="string" />
+    <attr name="hint3" format="string" />
+
+
+    <declare-styleable name="ViewGroupEditor">
+        <attr name="show_mark" />
+        <attr name="tag" />
+        <attr name="tag_style" />
+        <attr name="tag_width" />
+        <attr name="tag_height" />
+        <attr name="mark_color" />
+        <attr name="mark_ok_color" />
+        <attr name="text_size" />
+        <attr name="action_background" />
+        <attr name="action_background_drawable" />
+        <attr name="action_background_error" />
+        <attr name="action_background_drawable_error" />
+        <attr name="action_width" />
+        <attr name="action_height" />
+        <attr name="clickable" format="boolean" />
+
+        <attr name="validator_length" format="integer" />
+        <attr name="validator" format="enum">
+            <enum name="Length" value="1000" />
+            <enum name="Long" value="1001" />
+            <enum name="Int" value="1002" />
+            <enum name="DoubleConfirm" value="1003" />
+            <enum name="Float" value="1005" />
+            <enum name="Phone" value="1006" />
+            <enum name="Regex" value="1007" />
+            <enum name="Email" value="1008" />
+            <enum name="EnglishChinese" value="1009" />
+            <enum name="EnglishNumber" value="1010" />
+            <enum name="UpperNumberBracket" value="1011" />
+            <enum name="EnglishNumberChinese" value="1012" />
+            <enum name="Special" value="1013" />
+            <enum name="Date" value="1014" />
+            <enum name="XING_MING" value="1015" />
+            <enum name="SHENG_FEN_ZHENG" value="1016" />
+            <enum name="ADDRESS" value="1017" />
+            <enum name="MING_CHENG" value="1018" />
+            <enum name="INFO" value="1019" />
+            <enum name="TIME" value="1020" />
+            <enum name="Custom" value="3000" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ViewGroupSpinner">
+        <attr name="show_mark" />
+        <attr name="tag" />
+        <attr name="tag_style" />
+        <attr name="tag_width" />
+        <attr name="tag_height" />
+        <attr name="mark_color" />
+        <attr name="mark_ok_color" />
+        <attr name="text_size" />
+        <attr name="right_icon" />
+        <attr name="action_background" />
+        <attr name="action_background_drawable" />
+        <attr name="action_background_error" />
+        <attr name="action_background_drawable_error" />
+        <attr name="action_width" />
+        <attr name="action_height" />
+        <attr name="action_text_size" />
+        <attr name="items" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewGroupRadio">
+        <attr name="show_mark" />
+        <attr name="tag" />
+        <attr name="tag_width" />
+        <attr name="tag_height" />
+        <attr name="mark_color" />
+        <attr name="mark_ok_color" />
+        <attr name="text_size" />
+        <attr name="action_background" />
+        <attr name="action_background_drawable" />
+        <attr name="action_width" />
+        <attr name="action_height" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewGroup3Spinners">
+        <attr name="show_mark" />
+        <attr name="tag" />
+        <attr name="tag_style" />
+        <attr name="tag_width" />
+        <attr name="tag_height" />
+        <attr name="mark_color" />
+        <attr name="mark_ok_color" />
+        <attr name="text_size" />
+        <attr name="right_icon" />
+        <attr name="action_background" />
+        <attr name="action_background_drawable" />
+        <attr name="action_background_error" />
+        <attr name="action_background_drawable_error" />
+        <attr name="action_width" />
+        <attr name="action_height" />
+        <attr name="action_text_size" />
+        <attr name="margin_end" />
+        <attr name="hint1" />
+        <attr name="hint2" />
+        <attr name="hint3" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewGroupAddress">
+        <attr name="show_mark" />
+        <attr name="tag" />
+        <attr name="tag_style" />
+        <attr name="tag_width" />
+        <attr name="tag_height" />
+        <attr name="mark_color" />
+        <attr name="mark_ok_color" />
+        <attr name="text_size" />
+        <attr name="right_icon" />
+        <attr name="action_background" />
+        <attr name="action_background_drawable" />
+        <attr name="action_background_error" />
+        <attr name="action_background_drawable_error" />
+        <attr name="action_width" />
+        <attr name="action_height" />
+        <attr name="action_text_size" />
+        <attr name="margin_end" />
+        <attr name="hint1" />
+        <attr name="hint2" />
+        <attr name="hint3" />
+        <attr name="hint_address" format="string|reference" />
+    </declare-styleable>
+</resources>

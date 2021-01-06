@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:layout_marginBottom="@dimen/vl_px_86">
+
+	<View
+		android:layout_width="@dimen/vl_px_24"
+		android:layout_height="@dimen/vl_px_36"
+		android:layout_marginTop="@dimen/vl_px_26"
+		android:background="#0953AB"/>
+	<TextView
+		style="@style/TextStyle.Black.Size36"
+		android:layout_width="@dimen/vl_px_144"
+		android:layout_height="@dimen/vl_px_50"
+		android:layout_marginLeft="@dimen/vl_px_50"
+		android:layout_marginTop="@dimen/vl_px_20"
+		android:text="门店信息"/>
+
+	<Button
+		android:id="@+id/stores_add_btn"
+		style="@style/ButtonStyleBlue28"
+		android:layout_width="@dimen/vl_px_200"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginLeft="@dimen/vl_px_1620"
+		android:layout_marginTop="@dimen/vl_px_70"
+		android:text="添加门店"
+		android:background="@drawable/select_blue_white_corner"/>
+	
+	<TextView
+		android:id="@+id/stores_hint_tv"
+		style="@style/TextStyle.Gray9.Size32"
+		android:layout_width="@dimen/vl_px_96"
+		android:layout_height="@dimen/vl_px_46"
+		android:layout_marginLeft="@dimen/vl_px_234"
+		android:layout_marginTop="@dimen/vl_px_100"
+		android:text="未添加"/>
+	
+	<LinearLayout
+		android:id="@+id/stores_info_layout"
+		android:layout_width="@dimen/vl_px_1772"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/vl_px_170"
+		android:layout_marginLeft="@dimen/vl_px_54"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/vl_px_70"
+			android:background="#AED1FA"
+			android:orientation="horizontal">
+
+			<TextView
+				style="@style/TextStyle.Gray3.Size30.Center"
+				android:layout_width="@dimen/vl_px_508"
+				android:layout_height="match_parent"
+				android:text="门店名称"/>
+			<TextView
+				style="@style/TextStyle.Gray3.Size30.Center"
+				android:layout_width="@dimen/vl_px_278"
+				android:layout_height="match_parent"
+				android:text="行业MCC"/>
+			<TextView
+				style="@style/TextStyle.Gray3.Size30.Center"
+				android:layout_width="@dimen/vl_px_288"
+				android:layout_height="match_parent"
+				android:text="门店城市"/>
+			<TextView
+				style="@style/TextStyle.Gray3.Size30.Center"
+				android:layout_width="@dimen/vl_px_488"
+				android:layout_height="match_parent"
+				android:text="开户行账号"/>
+
+		</LinearLayout>
+
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/stores_info_listview"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+
+	</LinearLayout>
+
+</RelativeLayout>

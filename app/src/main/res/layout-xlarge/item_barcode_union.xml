@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.teyue.logic.detail.itemviewmodel.BarcodeUnionViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <Switch
+            android:checked="@{viewmodel.isItemViewOpen}"
+            app:switch="@{viewmodel.isItemViewOpen}"
+            android:id="@+id/field_input_enable"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            android:text=""
+            app:layout_constraintBottom_toTopOf="@+id/union_merchant"
+            app:layout_constraintStart_toStartOf="@+id/union_merchant" />
+
+        <TextView
+            android:id="@+id/tv_label_item"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="仅支持本代贷（买单吧APP)"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item2"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable" />
+
+        <TextView
+            android:id="@+id/union_merchant"
+            android:text="@{viewmodel.unionMerchant}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.unionMerchant)}"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_450"
+            android:layout_marginTop="@dimen/vl_px_140"
+            android:layout_marginBottom="@dimen/vl_px_64"
+            android:hint=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_label_item2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_20"
+            android:gravity="center"
+            android:text="银联商编"
+            app:layout_constraintBottom_toBottomOf="@+id/union_merchant"
+            app:layout_constraintEnd_toStartOf="@+id/union_merchant"
+            app:layout_constraintTop_toTopOf="@+id/union_merchant"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

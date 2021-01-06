@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.techown.merchant.R"/>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.teyue.logic.detail.itemviewmodel.BarcodeWechatViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <TextView
+            android:id="@+id/tv_label_item2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_20"
+            android:gravity="center"
+            android:text="行业类型"
+            app:layout_constraintBottom_toBottomOf="@+id/industry_type"
+            app:layout_constraintEnd_toStartOf="@+id/industry_type"
+            app:layout_constraintTop_toTopOf="@+id/industry_type"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_label_item6"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="微信商编"
+            app:layout_constraintBottom_toBottomOf="@+id/wechat_merchant"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item2"
+            app:layout_constraintTop_toTopOf="@+id/wechat_merchant" />
+
+        <TextView
+            android:id="@+id/tv_label_item7"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="通道费率"
+            app:layout_constraintBottom_toBottomOf="@+id/channel_rate"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item6"
+            app:layout_constraintTop_toTopOf="@+id/channel_rate" />
+
+        <TextView
+            android:text="@{viewmodel.industryStyle}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.industryStyle)}"
+            android:id="@+id/industry_type"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_450"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:hint=""
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:text="@{viewmodel.wechatMerchant}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.wechatMerchant)}"
+            android:id="@+id/wechat_merchant"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:hint=""
+            app:layout_constraintEnd_toEndOf="@+id/industry_type"
+            app:layout_constraintStart_toStartOf="@+id/industry_type"
+            app:layout_constraintTop_toBottomOf="@+id/industry_type" />
+
+        <TextView
+
+            android:text="@{viewmodel.channelRate}"
+            android:onClick="@{()->viewmodel.setEditDialog(viewmodel.channelRate)}"
+            android:id="@+id/channel_rate"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            android:hint=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/wechat_merchant"
+            app:layout_constraintStart_toStartOf="@+id/wechat_merchant"
+            app:layout_constraintTop_toBottomOf="@+id/wechat_merchant" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

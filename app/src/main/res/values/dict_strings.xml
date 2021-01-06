@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="one">1</string>
+    <string name="zero">0</string>
+
+    <!--特约业务枚举start-->
+    <string name="industry_classification">行业类型</string>
+    <string name="mdb_transaction_type">买单吧交易类型</string>
+    <string name="pay_method">买单方式</string>
+    <string name="checkout_pay_situation">收银台支付场景</string>
+    <string name="integer_no_secret">是否小额积分免密</string>
+    <string name="shop_detail_display">门店详情页显示</string>
+
+
+    <string name="count_fee_method">计费方式</string>
+    <string name="per_fixed_amount">每笔固定金额</string>
+    <string name="single_transaction_limit">单笔交易限额</string>
+    <!--1.选中开通境外卡时则显示且必输。否则不显示，是列表还是勾选-->
+    <string name="exclusive_mcc">专属MCC</string>
+    <string name="out_card_mcc">外卡MCC</string>
+    <string name="dcc_count_fee_method">DCC计费方式</string>
+    <string name="tcc_code">TCC码</string>
+
+    <string name="card_pro_no">卡产品组编号</string>
+    <string name="stage_num">分期期数</string>
+    <string name="rate_type">费率类型</string>
+    <!--特约业务枚举end-->
+
+</resources>

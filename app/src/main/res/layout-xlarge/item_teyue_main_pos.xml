@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.teyue.logic.main.itemviewmodel.POSItemViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/color_EEf1f4">
+
+        <TextView
+            android:id="@+id/tv_big_label_name5"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="自助转账"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable6"
+            app:layout_constraintEnd_toEndOf="@+id/tv_big_label_name3"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable6" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name6"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="刷脸支付"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable5"
+            app:layout_constraintEnd_toEndOf="@+id/tv_big_label_name5"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable5" />
+
+        <Button
+            android:onClick="@{()->viewmodel.onManage()}"
+            android:id="@+id/add2"
+            style="@style/ButtonStyleBk32"
+            android:layout_width="@dimen/vl_px_130"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_60"
+            android:text="管   理"
+            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+        <LinearLayout
+            android:id="@+id/title_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/vl_px_80"
+            android:background="#E3E6EA"
+            android:gravity="center_vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView11"
+                style="@style/TextStyle.LightBlue.Size34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/vl_px_60"
+                android:text="POS刷卡" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:onClick="@{()->viewmodel.onDelete()}"
+                android:id="@+id/delete"
+                style="@style/ButtonStyleBk32"
+                android:layout_width="@dimen/vl_px_130"
+                android:layout_height="@dimen/vl_px_60"
+                android:layout_marginRight="@dimen/vl_px_64"
+                android:text="删   除" />
+
+
+        </LinearLayout>
+
+        <Switch
+            android:checked="@{viewmodel.openApiEnter}"
+            app:switch="@{viewmodel.openApiEnter}"
+            android:id="@+id/field_input_enable"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginLeft="@dimen/vl_px_354"
+            android:layout_marginTop="@dimen/vl_px_32"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/teyue_finish_list" />
+
+        <Switch
+            android:checked="@{viewmodel.authorityTransaction}"
+            app:switch="@{viewmodel.authorityTransaction}"
+            android:id="@+id/field_input_enable2"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginTop="@dimen/vl_px_32"
+            app:layout_constraintEnd_toEndOf="@+id/field_input_enable"
+            app:layout_constraintStart_toStartOf="@+id/field_input_enable"
+            app:layout_constraintTop_toBottomOf="@+id/field_input_enable" />
+
+        <Switch
+            android:checked="@{viewmodel.noSecretNoSign}"
+            app:switch="@{viewmodel.noSecretNoSign}"
+            android:id="@+id/field_input_enable4"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginTop="@dimen/vl_px_32"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/vl_px_30"
+            app:layout_constraintEnd_toEndOf="@+id/field_input_enable5"
+            app:layout_constraintStart_toStartOf="@+id/field_input_enable5"
+            app:layout_constraintTop_toBottomOf="@+id/field_input_enable5" />
+
+        <Switch
+            android:checked="@{viewmodel.facePay}"
+            app:switch="@{viewmodel.facePay}"
+            android:id="@+id/field_input_enable5"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginTop="@dimen/vl_px_32"
+            app:layout_constraintEnd_toEndOf="@+id/field_input_enable6"
+            app:layout_constraintStart_toStartOf="@+id/field_input_enable6"
+            app:layout_constraintTop_toBottomOf="@+id/field_input_enable6" />
+
+        <Switch
+            android:checked="@{viewmodel.selfServiceTransfer}"
+            app:switch="@{viewmodel.selfServiceTransfer}"
+            android:id="@+id/field_input_enable6"
+            android:layout_width="@dimen/vl_px_106"
+            android:layout_height="@dimen/vl_px_58"
+            android:layout_marginTop="@dimen/vl_px_32"
+            app:layout_constraintEnd_toEndOf="@+id/field_input_enable2"
+            app:layout_constraintStart_toStartOf="@+id/field_input_enable2"
+            app:layout_constraintTop_toBottomOf="@+id/field_input_enable2" />
+
+        <TextView
+            android:id="@+id/textView12"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="终端管理"
+            app:layout_constraintBottom_toTopOf="@+id/teyue_finish_list"
+            app:layout_constraintStart_toStartOf="@+id/teyue_finish_list"
+            app:layout_constraintTop_toBottomOf="@+id/title_container" />
+
+        <TextView
+            android:id="@+id/textView13"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="@dimen/vl_px_190"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_60"
+            android:gravity="center"
+            android:text="0"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/textView12"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_62"
+            android:gravity="center"
+            android:text="OpenAPI接入"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable"
+            app:layout_constraintEnd_toStartOf="@+id/field_input_enable"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name3"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="刷卡预授权交易"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable2"
+            app:layout_constraintEnd_toEndOf="@+id/tv_big_label_name"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable2" />
+
+        <TextView
+            android:id="@+id/tv_big_label_name4"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="免密免签"
+            app:layout_constraintBottom_toBottomOf="@+id/field_input_enable4"
+            app:layout_constraintEnd_toEndOf="@+id/tv_big_label_name6"
+            app:layout_constraintTop_toTopOf="@+id/field_input_enable4" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/teyue_finish_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/vl_px_50"
+            android:layout_marginTop="@dimen/vl_px_100"
+            android:layout_marginRight="@dimen/vl_px_50"
+            android:background="@color/button_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_container" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

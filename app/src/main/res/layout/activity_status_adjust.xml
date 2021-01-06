@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <Button
+            android:onClick="@{()-> viewmodel.submit()}"
+            android:id="@+id/company_camera_save"
+            style="@style/ButtonStyleWt40"
+            android:layout_width="@dimen/vl_px_340"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/vl_px_30"
+            android:text="提交审核"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/adjust_classification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/vl_px_316"
+            android:layout_marginTop="@dimen/vl_px_142"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            android:onCheckedChanged="@{viewmodel.onCheckedChangeListener}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="294dp">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                style="@style/TextStyle.Black.Size32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:checked="@{viewmodel.adjustClassification==Classification.Normal?true:false}"
+                android:padding="0dp"
+                android:text="正常"
+                tools:layout_editor_absoluteX="136dp"
+                tools:layout_editor_absoluteY="289dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                style="@style/TextStyle.Black.Size32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewmodel.adjustClassification==Classification.Deactivate?true:false}"
+                android:layout_marginLeft="@dimen/vl_px_80"
+                android:text="停用（可恢复正常）"
+                tools:layout_editor_absoluteX="136dp"
+                tools:layout_editor_absoluteY="289dp" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                style="@style/TextStyle.Black.Size32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{viewmodel.adjustClassification==Classification.Logout?true:false}"
+                android:layout_marginStart="@dimen/vl_px_80"
+                android:text="注销"
+                tools:layout_editor_absoluteX="136dp"
+                tools:layout_editor_absoluteY="289dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_label_item2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_20"
+            android:gravity="center"
+            android:text="调整分类"
+            app:layout_constraintBottom_toBottomOf="@+id/adjust_classification"
+            app:layout_constraintEnd_toStartOf="@+id/adjust_classification"
+            app:layout_constraintTop_toTopOf="@+id/adjust_classification"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_label_item6"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="调整原因"
+            app:layout_constraintBottom_toBottomOf="@+id/wechat_merchant"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item2"
+            app:layout_constraintTop_toTopOf="@+id/wechat_merchant" />
+
+        <TextView
+            android:id="@+id/tv_label_item7"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="备注"
+            app:layout_constraintBottom_toBottomOf="@+id/channel_rate"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item6"
+            app:layout_constraintTop_toTopOf="@+id/channel_rate" />
+
+        <TextView
+            android:onClick="@{()-> viewmodel.back()}"
+            android:id="@+id/textView11"
+            android:layout_width="@dimen/vl_px_46"
+            android:layout_height="@dimen/vl_px_46"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/vl_px_60"
+            android:background="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_business_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_business_name" />
+
+        <TextView
+
+            android:id="@+id/wechat_merchant"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_500"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:hint=""
+            android:text="@{viewmodel.adjustReason}"
+            app:layout_constraintStart_toStartOf="@+id/adjust_classification"
+            app:layout_constraintTop_toBottomOf="@+id/adjust_classification" />
+
+        <TextView
+            android:id="@+id/tv_business_name"
+            style="@style/TextStyle.Black.Size46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/vl_px_662"
+            android:layout_marginTop="@dimen/vl_px_16"
+            android:layout_marginRight="@dimen/vl_px_748"
+            android:gravity="center"
+            android:text="状态调整"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+
+            android:id="@+id/channel_rate"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_1440"
+            android:layout_height="@dimen/vl_px_250"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            android:hint=""
+            android:text="@{viewmodel.remark}"
+            app:layout_constraintStart_toStartOf="@+id/wechat_merchant"
+            app:layout_constraintTop_toBottomOf="@+id/wechat_merchant" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <data>
+
+        <import type="com.pccc.shoudan.business.information_change.status.StatusAdjustViewModel.Classification" />
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.information_change.status.StatusAdjustViewModel" />
+    </data>
+</layout>

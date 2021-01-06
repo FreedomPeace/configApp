@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout5"
+    android:layout_width="@dimen/vl_px_1600"
+    android:layout_height="@dimen/vl_px_70"
+    android:layout_marginTop="@dimen/vl_px_50"
+    android:background="@color/white"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tv_business_name">
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size30.Center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="商户名称" />
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="@color/color_list_title" />
+
+    <LinearLayout
+        style="@style/TextStyle.Gray3.Size30.Center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <TextView
+            android:gravity="center"
+            style="@style/TextStyle.Gray3.Size32"
+            android:background="@drawable/textview_stroke_dark_gray_rect"
+            android:layout_width="@dimen/vl_px_60"
+            android:layout_height="@dimen/vl_px_60"
+            android:text="-"
+            />
+        <TextView
+            android:gravity="center"
+            style="@style/TextStyle.Gray3.Size32"
+            android:background="@drawable/textview_stroke_dark_gray_rect"
+            android:layout_width="@dimen/vl_px_120"
+            android:layout_height="@dimen/vl_px_60"
+            android:text="0"
+            />
+        <TextView
+            android:gravity="center"
+            style="@style/TextStyle.Gray3.Size32"
+            android:background="@drawable/textview_stroke_dark_gray_rect"
+            android:layout_width="@dimen/vl_px_60"
+            android:layout_height="@dimen/vl_px_60"
+            android:text="+"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+

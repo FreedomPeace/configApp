@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_label_item2"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/vl_px_20"
+            android:gravity="center"
+            android:text="行业类型"
+            app:layout_constraintBottom_toBottomOf="@+id/industry_type"
+            app:layout_constraintEnd_toStartOf="@+id/industry_type"
+            app:layout_constraintTop_toTopOf="@+id/industry_type"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_label_item6"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="支付宝商编"
+            app:layout_constraintBottom_toBottomOf="@+id/alipay_merchant"
+            app:layout_constraintEnd_toEndOf="@+id/tv_label_item2"
+            app:layout_constraintTop_toTopOf="@+id/alipay_merchant" />
+
+        <TextView
+            android:id="@+id/industry_type"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginLeft="@dimen/vl_px_450"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:hint=""
+            android:onClick="@{()-> viewmodel.setListDialog(viewmodel.industryStyle,R.string.industry_classification)}"
+            android:text="@{viewmodel.industryStyle}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:onClick="@{()-> viewmodel.setEditDialog(viewmodel.alipayMerchant)}"
+            android:text="@{viewmodel.alipayMerchant}"
+            android:id="@+id/alipay_merchant"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder"
+            android:layout_width="@dimen/vl_px_516"
+            android:layout_height="@dimen/vl_px_60"
+            android:layout_marginTop="@dimen/vl_px_20"
+            android:layout_marginBottom="@dimen/vl_px_40"
+            android:hint=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/industry_type"
+            app:layout_constraintStart_toStartOf="@+id/industry_type"
+            app:layout_constraintTop_toBottomOf="@+id/industry_type" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <data>
+        <import type="com.techown.merchant.R"/>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.teyue.logic.detail.itemviewmodel.BarcodeAlipayViewModel" />
+    </data>
+</layout>

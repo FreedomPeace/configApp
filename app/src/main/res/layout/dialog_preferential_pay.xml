@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="@dimen/vl_px_1152"
+        android:orientation="vertical"
+        android:background="#FFFFFFFF">
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/vl_px_156">
+
+            <Button
+                android:id="@+id/item_btn_close"
+                android:layout_width="@dimen/vl_px_22"
+                android:layout_height="@dimen/vl_px_44"
+                android:layout_marginTop="@dimen/vl_px_56"
+                android:layout_marginLeft="@dimen/vl_px_38"
+                android:background="@drawable/back"/>
+
+            <TextView
+                style="@style/TextStyle.Black.Size46.Center"
+                android:layout_width="@dimen/vl_px_376"
+                android:layout_height="@dimen/vl_px_66"
+                android:layout_marginTop="@dimen/vl_px_48"
+                android:layout_centerHorizontal="true"
+                android:text="开通优惠买单"/>
+
+            <Button
+                android:id="@+id/complete_btn"
+                style="@style/ButtonStyleWhiteTv32"
+                android:layout_width="@dimen/vl_px_160"
+                android:layout_height="@dimen/vl_px_70"
+                android:layout_marginTop="@dimen/vl_px_44"
+                android:layout_marginRight="@dimen/vl_px_60"
+                android:layout_alignParentRight="true"
+                android:text="完成"
+                android:background="@drawable/btn_no_gradient_blue_corner"/>
+
+        </RelativeLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/include_pf_info"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/vl_px_2"
+                    android:layout_marginTop="@dimen/vl_px_28"
+                    android:background="#E7E7E8" />
+
+                <!-- 优惠渠道标签 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <!-- 优惠渠道title -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/vl_px_50"
+                        android:layout_marginTop="@dimen/vl_px_20"
+                        android:orientation="horizontal">
+                        <View
+                            android:layout_width="@dimen/vl_px_24"
+                            android:layout_height="@dimen/vl_px_36"
+                            android:layout_marginTop="@dimen/vl_px_8"
+                            android:background="#0953AB"/>
+                        <TextView
+                            style="@style/TextStyle.Black.Size36"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/vl_px_50"
+                            android:text="优惠渠道"/>
+                    </LinearLayout>
+
+                    <include layout="@layout/include_pf_channel"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/vl_px_2"
+                        android:layout_marginTop="@dimen/vl_px_28"
+                        android:background="#E7E7E8" />
+
+                </LinearLayout>
+
+                <!-- 门店信息标签 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/vl_px_20"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/include_pf_stores"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

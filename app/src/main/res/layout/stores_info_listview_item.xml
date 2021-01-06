@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/vl_px_90"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/shape_list_bg"
+    android:orientation="horizontal" >
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size32.Center"
+        android:layout_width="@dimen/vl_px_508"
+        android:layout_height="match_parent"
+        android:text="门店名称"/>
+
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="#E6E6E6"/>
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size32.Center"
+        android:layout_width="@dimen/vl_px_278"
+        android:layout_height="match_parent"
+        android:text="行业MCC"/>
+
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="#E6E6E6"/>
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size32.Center"
+        android:layout_width="@dimen/vl_px_288"
+        android:layout_height="match_parent"
+        android:text="门店城市"/>
+
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="#E6E6E6"/>
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size32.Center"
+        android:layout_width="@dimen/vl_px_488"
+        android:layout_height="match_parent"
+        android:text="开户行账号"/>
+
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="#E6E6E6"/>
+
+    <Button
+        style="@style/ButtonStyleBlackTv32"
+        android:id="@+id/info_list_item_btn_delete"
+        android:layout_width="@dimen/vl_px_130"
+        android:layout_height="@dimen/vl_px_60"
+        android:layout_marginLeft="@dimen/vl_px_36"
+        android:background="@color/shallow_blue"
+        android:text="删除"/><!--缺少背景 -->
+</LinearLayout>

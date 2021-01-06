@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout5"
+    android:layout_width="@dimen/vl_px_1600"
+    android:layout_height="@dimen/vl_px_70"
+    android:background="@color/white"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    tools:layout_editor_absoluteY="47dp">
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size30.Center"
+        android:layout_width="@dimen/vl_px_486"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="门店名称" />
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="@color/color_list_title" />
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size30.Center"
+        android:layout_width="@dimen/vl_px_354"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="省" />
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="@color/color_list_title" />
+
+    <TextView
+        style="@style/TextStyle.Gray3.Size30.Center"
+        android:layout_width="@dimen/vl_px_354"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="市" />
+    <View
+        android:layout_width="@dimen/vl_px_2"
+        android:layout_height="match_parent"
+        android:background="@color/color_list_title" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+        <TextView
+            android:gravity="center"
+            style="@style/TextStyle.Gray3.Size32"
+            android:background="@drawable/textview_stroke_dark_gray_rect"
+            android:layout_width="@dimen/vl_px_60"
+            android:layout_height="@dimen/vl_px_60"
+            android:text="-"
+            />
+        <TextView
+            android:gravity="center"
+            style="@style/TextStyle.Gray3.Size32"
+            android:background="@drawable/textview_stroke_dark_gray_rect"
+            android:layout_width="@dimen/vl_px_120"
+            android:layout_height="@dimen/vl_px_60"
+            android:text="0"
+            />
+        <TextView
+            android:gravity="center"
+            style="@style/TextStyle.Gray3.Size32"
+            android:background="@drawable/textview_stroke_dark_gray_rect"
+            android:layout_width="@dimen/vl_px_60"
+            android:layout_height="@dimen/vl_px_60"
+            android:text="+"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

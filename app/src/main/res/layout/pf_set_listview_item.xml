@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginTop="@dimen/vl_px_30"
+	android:paddingBottom="@dimen/vl_px_40"
+	android:orientation="vertical"
+	android:background="#EEF1F4">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20"
+		android:orientation="horizontal">
+
+		<TextView
+			android:id="@+id/pf_set_title_tv"
+			style="@style/TextStyle.ShallowBlue.Size40"
+			android:layout_width="wrap_content"
+			android:layout_height="@dimen/vl_px_56"
+			android:layout_marginLeft="@dimen/vl_px_50"
+			android:layout_gravity="center_vertical"
+			android:text="优惠类型1"/>
+		
+		<Button
+			android:id="@+id/pf_set_delete_btn"
+			style="@style/ButtonStyleBk32"
+			android:layout_width="@dimen/vl_px_130"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="@dimen/vl_px_1444"
+			android:text="删除"
+			android:background="@drawable/select_gray_black50_corner"/>
+
+	</LinearLayout>
+
+	<!--第一行-->
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20">
+
+        <TextView
+            android:id="@+id/pf_set_type_select"
+            style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+            android:layout_width="@dimen/vl_px_450"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/vl_px_1040"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/pf_set_type_lab"
+            style="@style/TextStyle.Black.Size32"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/pf_set_type_select"
+            android:paddingRight="@dimen/vl_px_20"
+            android:text="优惠类型"/>
+
+        <TextView
+			android:id="@+id/pf_set_type_star"
+            style="@style/TextFillInLogo"
+            android:layout_toLeftOf="@+id/pf_set_type_lab" />
+
+	</RelativeLayout>
+
+	<!--第二行-->
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20">
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_1040">
+
+			<TextView
+				android:id="@+id/pf_set_qishijine_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+				android:layout_width="@dimen/vl_px_450"
+				android:layout_height="match_parent"
+				android:layout_alignParentRight="true" />
+
+			<TextView
+				android:id="@+id/pf_set_qishijine_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toLeftOf="@+id/pf_set_qishijine_select"
+				android:paddingRight="@dimen/vl_px_20"
+				android:text="订单起始金额"/>
+
+			<TextView
+				android:id="@+id/pf_set_qishijine_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_set_qishijine_lab" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:id="@+id/pf_set_youhuijine_select_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_254">
+
+			<TextView
+				android:id="@+id/pf_set_youhuijine_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder"
+				android:layout_width="@dimen/vl_px_450"
+				android:layout_height="match_parent"
+				android:layout_alignParentRight="true"
+				android:hint="                                                   元" />
+
+			<TextView
+				android:id="@+id/pf_set_youhuijine_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toLeftOf="@+id/pf_set_youhuijine_select"
+				android:paddingRight="@dimen/vl_px_20"
+				android:text="优惠金额"/>
+
+			<TextView
+				android:id="@+id/pf_set_youhuijine_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_set_youhuijine_lab" />
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+	<!--第三行-->
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20">
+
+		<TextView
+			android:id="@+id/pf_set_fengding_select"
+			style="@style/TextStyle.Gray3.Size32.BoxBorder"
+			android:layout_width="@dimen/vl_px_450"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_1040"
+			android:layout_alignParentRight="true" />
+
+		<TextView
+			android:id="@+id/pf_set_fengding_lab"
+			style="@style/TextStyle.Black.Size32"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_toLeftOf="@+id/pf_set_fengding_select"
+			android:paddingRight="@dimen/vl_px_20"
+			android:text="单笔优惠封顶"/>
+
+		<TextView
+			android:id="@+id/pf_set_fengding_star"
+			style="@style/TextFillInLogo"
+			android:layout_toLeftOf="@+id/pf_set_fengding_lab" />
+
+	</RelativeLayout>
+
+	<!--第四行-->
+	<RelativeLayout
+		android:id="@+id/pf_set_time1_layout"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20">
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_1040">
+
+			<TextView
+				android:id="@+id/pf_set_shengxiaoshijian1_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder"
+				android:layout_width="@dimen/vl_px_450"
+				android:layout_height="match_parent"
+				android:layout_alignParentRight="true" />
+
+			<TextView
+				android:id="@+id/pf_set_shengxiaoshijian1_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toLeftOf="@+id/pf_set_shengxiaoshijian1_select"
+				android:paddingRight="@dimen/vl_px_20"
+				android:text="生效时间1"/>
+
+			<TextView
+				android:id="@+id/pf_set_shengxiaoshijian1_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_set_shengxiaoshijian1_lab" />
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_254">
+
+			<TextView
+				android:id="@+id/pf_set_shixiaoshijian1_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+				android:layout_width="@dimen/vl_px_450"
+				android:layout_height="match_parent"
+				android:layout_alignParentRight="true" />
+
+			<TextView
+				android:id="@+id/pf_set_shixiaoshijian1_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toLeftOf="@+id/pf_set_shixiaoshijian1_select"
+				android:paddingRight="@dimen/vl_px_20"
+				android:text="失效时间1"/>
+
+			<TextView
+				android:id="@+id/pf_set_shixiaoshijian1_star"
+				style="@style/TextFillInLogo"
+				android:layout_toLeftOf="@+id/pf_set_shixiaoshijian1_lab" />
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+	<!--第五行-->
+	<RelativeLayout
+		android:id="@+id/pf_set_time2_layout"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20">
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_1040">
+
+			<TextView
+				android:id="@+id/pf_set_shengxiaoshijian2_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder"
+				android:layout_width="@dimen/vl_px_450"
+				android:layout_height="match_parent"
+				android:layout_alignParentRight="true" />
+
+			<TextView
+				android:id="@+id/pf_set_shengxiaoshijian2_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toLeftOf="@+id/pf_set_shengxiaoshijian2_select"
+				android:paddingRight="@dimen/vl_px_20"
+				android:text="生效时间2"/>
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_254">
+
+			<TextView
+				android:id="@+id/pf_set_shixiaoshijian2_select"
+				style="@style/TextStyle.Gray3.Size32.BoxBorder.DownPic"
+				android:layout_width="@dimen/vl_px_450"
+				android:layout_height="match_parent"
+				android:layout_alignParentRight="true" />
+
+			<TextView
+				android:id="@+id/pf_set_shixiaoshijian2_lab"
+				style="@style/TextStyle.Black.Size32"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_toLeftOf="@+id/pf_set_shixiaoshijian2_select"
+				android:paddingRight="@dimen/vl_px_20"
+				android:text="失效时间2"/>
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+	<!--第六行-->
+
+	<RelativeLayout
+		android:id="@+id/pf_set_date_layout"
+		android:layout_width="wrap_content"
+		android:layout_height="@dimen/vl_px_60"
+		android:layout_marginTop="@dimen/vl_px_20">
+
+		<Button
+			android:id="@+id/pf_set_xianyongdate_select_btn"
+			style="@style/ButtonStyleBlue28"
+			android:layout_width="@dimen/vl_px_140"
+			android:layout_height="match_parent"
+			android:layout_marginRight="@dimen/vl_px_1340"
+			android:layout_alignParentRight="true"
+			android:text="选择"
+			android:background="@drawable/select_blue_white_corner"/>
+
+		<TextView
+			android:id="@+id/pf_set_xianyongriqi_lab"
+			style="@style/TextStyle.Black.Size32"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:layout_toLeftOf="@+id/pf_set_xianyongdate_select_btn"
+			android:paddingRight="@dimen/vl_px_20"
+			android:text="周期限用日期"/>
+
+		<TextView
+			android:id="@+id/pf_set_xianyongriqi_star"
+			style="@style/TextFillInLogo"
+			android:layout_toLeftOf="@+id/pf_set_xianyongriqi_lab" />
+
+	</RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="edit_dialog">1</integer>
+    <integer name="date_dialog">2</integer>
+    <integer name="list_dialog">3</integer>
+</resources>

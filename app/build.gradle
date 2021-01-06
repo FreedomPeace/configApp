@@ -1,0 +1,290 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+//apply plugin: 'kotlin-android'
+//apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    defaultConfig {
+        multiDexEnabled true
+        applicationId ApplicationId
+        versionCode rootProject.ext.VERSION_CODE as int
+        versionName rootProject.ext.VERSION_NAME
+        minSdkVersion MIN_SDK_VERSION as int
+        ndk {
+            //尝试修改找不到爱加密的.so文件
+            abiFilters "armeabi-v7a"
+//            abiFilters "armeabi", "armeabi-v7a"
+        }
+    }
+    dataBinding{
+        enabled =true
+    }
+    signingConfigs {
+        apply plugin: 'signing'
+
+        release {
+            storeFile file("techown.keystore")
+            storePassword "123456"
+            keyAlias "techownkey"
+            keyPassword "123456"
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles 'proguard-project.txt'
+        }
+        debug {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+//            proguardFiles 'proguard-project.txt'
+        }
+    }
+    //两个维度，一个是env 生产环境类型 ， 一个是serviceEnv 服务器类型环境 云和常规
+    flavorDimensions 'env', 'serviceEnv'
+    productFlavors {
+
+        pro {
+            dimension 'env'
+            buildConfigField "boolean", "isSit", "false"
+            manifestPlaceholders = [
+                    app_name: "商户pro",
+                    main: ""
+            ]
+        }
+        uat {
+            dimension 'env'
+            buildConfigField "boolean", "isSit", "false"
+            manifestPlaceholders = [
+                    app_name: "商户uat",
+                    main: ""
+            ]
+        }
+        sit {
+            applicationIdSuffix ".debug"
+            dimension 'env'
+            buildConfigField "boolean", "isSit", "true"
+            manifestPlaceholders = [
+                    app_name: "商户sit",
+                    main: "MAIN"
+            ]
+        }
+/*MAIN*/
+        cloud {
+            dimension 'serviceEnv'
+            buildConfigField "boolean", "isCloudApk", "true"
+        }
+        common {
+            dimension 'serviceEnv'
+            buildConfigField "boolean", "isCloudApk", "false"
+
+        }
+    }
+
+//    android.variantFilter { variant ->
+//        if (variant.buildType.name == 'debug'
+//                && variant.getFlavors().get(0).name == 'pro') {
+//            variant.setIgnore(true);
+//        }
+//        if (variant.buildType.name == 'release'
+//                && variant.getFlavors().get(0).name == 'sit') {
+//            variant.setIgnore(true);
+//        }
+//        if (variant.buildType.name == 'debug'
+//                && variant.getFlavors().get(0).name == 'uat') {
+//            variant.setIgnore(true);
+//        }
+//    }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def buildType = variant.buildType.name
+                        def proFlavors = variant.productFlavors.name
+                        def fileName =
+                                rootProject.name + "-${proFlavors}${buildType}-${variant.versionCode}" +
+                                        "-${variant.versionName}.apk"
+                        def apkPath = PackagedApkLocation + proFlavors[0] + "/" + proFlavors[1] + "/" + JSOrZG + "/"
+                        outputFileName = fileName
+                        def instance = SimpleDateFormat.getTimeInstance()
+                        println(instance.format(new Date()) + "修改文件的保存路径：" + output.outputFile.getPath())
+                    }
+            }
+    }
+        compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+repositories {
+    flatDir {
+        dirs '../newmerchantnew/libs'
+    }
+}
+
+dependencies {
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.ext.kotlin_version"
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    implementation 'com.google.zxing:core:3.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+//    implementation 'id.zelory:compressor:2.1.0'
+    if (!rootProject.ext.isAlone) {
+        implementation project(path: ':library')
+    }
+    implementation project(path: ':ui_library')
+
+}
+task aizpUatCommmon {
+    def taskName = 'assembleUatCommonRelease'
+    dependsOn taskName
+    doLast {
+        if (JSOrZG.toInteger() == 2) {
+            //至高，只需要修改打包后的文件名-复制到发布包的地方即可
+            copy(taskName)
+        } else if (JSOrZG.toInteger() == 3) {
+            autoSign(taskName)
+        }
+    }
+}
+task aizpUatCloud {
+    def taskName = 'assembleUatCloudRelease'
+    dependsOn taskName
+    doLast {
+        if (JSOrZG.toInteger() == 2) {
+            //至高，只需要修改打包后的文件名-复制到发布包的地方即可
+            copy(taskName)
+        } else if (JSOrZG.toInteger() == 3) {
+            autoSign(taskName)
+        }
+    }
+}
+
+task aizpProCloud {
+    def taskName = 'assembleProCloudRelease'
+    dependsOn taskName
+    doLast {
+        if (JSOrZG.toInteger() == 2) {
+            //至高，只需要修改打包后的文件名-复制到发布包的地方即可
+            copy(taskName)
+        } else if (JSOrZG.toInteger() == 3) {
+            autoSign(taskName)
+        }
+
+    }
+}
+task aizpProCommmon {
+    def taskName = 'assembleProCommonRelease'
+    dependsOn taskName
+    doFirst {
+        println("i am first")
+    }
+    doLast {
+        if (JSOrZG.toInteger() == 2) {
+            //至高，只需要修改打包后的文件名-复制到发布包的地方即可
+            copy(taskName)
+        } else if (JSOrZG.toInteger() == 3) {
+            autoSign(taskName)
+        }
+    }
+
+}
+
+// autoSign
+private autoSign(String taskName) {
+// 这个task执行会在assembleDebug之后执行
+//    doLast {
+    //签名包的输出目录
+    def outputDir
+    android.applicationVariants.all { variant ->
+
+        variant.outputs.each { output ->
+            def exist = output.outputFile.exists()
+            def proFlavors = variant.productFlavors.name
+//            println('===================')
+//            println(exist)
+//            println(taskName.toLowerCase())
+//            println(proFlavors[0] +"----"+ proFlavors[1])
+//            println(taskName.toLowerCase().contains(proFlavors[0] + proFlavors[1]))
+//            println('===================')
+            if (exist && taskName.toLowerCase().contains(proFlavors[0] + proFlavors[1])) {
+                //apk名字
+                def name = ReleaseApkName
+                //apk打包所在的目录
+                def apk = output.outputFile.getPath()
+                println("被签名的apk，文件在："+apk)
+                // 签名后存放的路径
+                outputDir = ReleaseApkLocation + ReleaseVersionDate + "\\" + proFlavors[0] + "\\" + proFlavors[1] + "\\" + JSOrZG + "\\"
+                File file = new File(outputDir)
+                if (!file.exists()) {
+                    file.mkdirs()
+                }
+                //签名脚本文件所在的绝对路径
+                def signBatAbsoPath = BatDirPath + SignBatFileName
+                println("*********" + signBatAbsoPath)
+                exec {
+                    //切换到sign.bat的文件夹所在的目录，执行脚本
+                    workingDir BatDirPath
+                    //执行shell脚本 "," 传参
+                    commandLine 'cmd', '/c', signBatAbsoPath, apk, outputDir + name,JDKPATH
+                }
+                println("签名成功，文件保存至：" + outputDir + name)
+                println("-----------------------------------")
+            }
+        }
+    }
+
+}
+
+private copy(String taskName) {
+    def renameApkDirPath
+    android.applicationVariants.all { variant ->
+
+        variant.outputs.each { output ->
+            def exist = output.outputFile.exists()
+            def proFlavors = variant.productFlavors.name
+            if (exist && taskName.toLowerCase().contains(proFlavors[0] + proFlavors[1])) {
+                def name = ReleaseApkName
+                //打包完的apk文件所在的路径
+                def packagedApkPath = output.outputFile.getPath()
+                // apk重命名后存放的文件夹路径
+                renameApkDirPath = ReleaseApkLocation + ReleaseVersionDate + "\\" + proFlavors[0] + "\\" + proFlavors[1] + "\\" + JSOrZG + "\\"
+                File file = new File(renameApkDirPath)
+                if (!file.exists()) {
+                    file.mkdirs()
+                }
+                //签名脚本文件所在的绝对路径
+                def copyBatAbsoPath = BatDirPath + CopyBatFileName
+                exec {
+                    //切换到sign.bat的文件夹所在的目录，执行脚本
+                    workingDir BatDirPath
+                    //执行shell脚本 "," 传参
+                    commandLine 'cmd', '/c', copyBatAbsoPath, packagedApkPath, renameApkDirPath + name
+                }
+                println("重命名拷贝成功，文件保存至：" + renameApkDirPath + name)
+                println("-----------------------------------")
+            }
+        }
+    }
+
+}

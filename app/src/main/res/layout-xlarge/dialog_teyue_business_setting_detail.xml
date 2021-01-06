@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.pccc.shoudan.business.teyue.logic.detail.SettingDetailViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/vl_px_1880"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_business_name"
+            style="@style/TextStyle.Black.Size46"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/vl_px_66"
+            android:gravity="center"
+            android:text="银联/网联"
+            android:layout_marginTop="@dimen/vl_px_46"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <ImageView
+            android:id="@+id/textView11"
+            android:layout_width="@dimen/vl_px_48"
+            android:layout_height="@dimen/vl_px_48"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/vl_px_40"
+            android:src="@drawable/close"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_business_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_business_name" />
+
+        <android.support.v7.widget.RecyclerView
+            app:items="@{viewmodel.itemBeans}"
+            android:id="@+id/setting_detail_container"
+            android:layout_width="@dimen/vl_px_1880"
+            android:layout_height="@dimen/vl_px_900"
+            android:layout_marginTop="@dimen/vl_px_40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/add"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <Button
+            android:id="@+id/add"
+            android:onClick="@{()->viewmodel.add()}"
+            style="@style/ButtonStyleWhiteBlueBk"
+            android:layout_width="@dimen/vl_px_160"
+            android:layout_height="@dimen/vl_px_70"
+            android:text="确  认"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/vl_px_60"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_business_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_business_name" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
